@@ -21,7 +21,7 @@ export class App {
   }
 
   useRoutes() {
-    this.app.use('/users', () => {})
+    this.app.use('/users', this.userController.router)
   }
 
   public async init() {

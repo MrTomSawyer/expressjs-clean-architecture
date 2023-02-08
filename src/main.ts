@@ -3,9 +3,10 @@ import { LoggerService } from "./logger/logger.service";
 import { UserController } from "./users/users.controller";
 
 const bootstrap = async () => {
+  const logger = new LoggerService();
   const app = new App(
-    new LoggerService(),
-    new UserController()
+    logger,
+    new UserController(logger)
     );
   app.init();
 }
