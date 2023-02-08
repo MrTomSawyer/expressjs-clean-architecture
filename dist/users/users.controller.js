@@ -23,7 +23,7 @@ let UserController = class UserController extends base_controller_1.BaseControll
         this.loggerService = loggerService;
         this.bindRoutes([
             { path: '/register', method: 'post', func: this.register },
-            { path: '/login', method: 'post', func: this.login }
+            { path: '/login', method: 'post', func: this.login },
         ]);
     }
     login(req, res, next) {
