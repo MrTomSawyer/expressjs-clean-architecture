@@ -4,7 +4,12 @@ export class LoggerService  {
 	public logger: Logger<unknown>;
 
 	constructor() {
-		this.logger = new Logger();
+		this.logger = new Logger({
+			displayInstanceName: false,
+			displayLoggerName: false,
+			displayFilePath: 'hidden',
+			displayFunctionName: false,
+		});
 	}
 
 	log(...args: unknown[]): void {
