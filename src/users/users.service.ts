@@ -13,7 +13,7 @@ export class UserService implements IUserService {
     return null;
   }
 
-  validateUser(dto: UserLoginDto): Promise<boolean> {
+  async validateUser(dto: UserLoginDto): Promise<boolean> {
     return true;
   }
 }
