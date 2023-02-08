@@ -13,8 +13,8 @@ import { HttpError } from '../errors/HttpError.class';
 @injectable()
 export class UserController extends BaseController implements IUserController {
 	constructor(
-		@inject(TYPES.ILogger) private loggerService: ILogger,
-		@inject(TYPES.UserService) private userService: UserService 
+			@inject(TYPES.ILogger) private loggerService: ILogger,
+			@inject(TYPES.UserService) private userService: UserService 
 		) {
 		super(loggerService);
 		this.bindRoutes([
