@@ -4,26 +4,20 @@ import { HttpError } from "../../errors/HttpError.class";
 import { IMiddleware } from "../middleware.interface";
 
 export class AuthMiddleware implements IMiddleware {
-  constructor(private secret: string) {}
+	constructor(private secret: string) {}
 
-  execute (req: Request, res: Response, next: NextFunction) {
-    if (!req.headers.authorization) {
-      return next(new HttpError(401, 'Action requires authorization', 'AuthMiddleware'));
-    }
-    const token = req.headers.authorization.split(' ')[1];
-    verify(token, this.secret, (err, payload) => {
-      if (err) {
-        return next(new HttpError(401, err.message, 'AuthMiddleware'))
-      }
-      if (
-        payload
-        && typeof payload !== 'string'
-        && 'email' in payload
-      ) {
-        req.user = payload.email;
-      }
-      next();
-    })
-    next();
-  }
+	execute(req: Request, _res: Response, next: NextFunction): void {
+		if (req.headers.authorization) {
+			verify(req.headers.authorization.split(' ')[1], this.secret, (err, payload) => {
+				if (err) {
+					next();
+				} else if (payload && typeof payload !== 'string') {
+					req.user = payload.email;
+					next();
+				}
+			});
+		} else {
+			next();
+		}
+	}
 }

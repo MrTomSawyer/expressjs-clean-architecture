@@ -12,6 +12,7 @@ import { ValidateMiddleware } from '../common/validate.middleware';
 import { IJwtAuthService } from '../common/JwtAuth/jwtAuth.service.interface';
 import { IConfigService } from '../config/config.service.interface';
 import { IUserService } from './users.service.interface';
+import { AuthGuard } from '../common/JwtAuth/auth.guard';
 
 @injectable()
 export class UserController extends BaseController implements IUserController {
@@ -38,7 +39,8 @@ export class UserController extends BaseController implements IUserController {
 			{
 				path: '/info',
 				method: 'get',
-				func: this.info
+				func: this.info,
+				middlewares: [new AuthGuard()]
 			},
 		]);
 	}
