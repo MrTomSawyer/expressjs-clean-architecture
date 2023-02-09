@@ -54,6 +54,7 @@ Request body:
   "password": "qwerty123",
   "name": "Jane Doe"
 }
+```
 
 `POST users/login` - sings user in
 
