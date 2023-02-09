@@ -16,7 +16,7 @@
     "lint:fix": "eslint ./src/** --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "Slava V",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.10.0",
