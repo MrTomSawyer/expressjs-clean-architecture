@@ -13,7 +13,6 @@ export class UsersRepository implements IUsersRepository {
   ) {}
 
   async create ({ email, password, name }: User): Promise<UserModel> {
-    console.log('5')
     return this.prismaService.client.userModel.create({
       data: {
         email,
