@@ -1,6 +1,6 @@
 # Introduction
 
-This application has mostly been inspired by Robert Miller's 'Clean Architecture'.
+This application has mostly been inspired by Robert Martins's 'Clean Architecture'.
 
 It's logic is split into several layers: controllers, services, repositories, entities, and is driven by Dependency Injection (DI) and Inversion of Control (IoC) design patterns.
 
