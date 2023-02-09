@@ -1,5 +1,4 @@
-import { IsEmail } from "class-validator";
-import { IsString } from "class-validator/types/decorator/decorators";
+import { IsEmail, IsString } from "class-validator";
 
 export class UserRegisterDto {
   @IsEmail({}, {message: 'Incorrect email'})

@@ -1,9 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
+import { UserModel } from '@prisma/client';
 import { UserLoginDto } from './dto/userLogin.dto';
 import { UserRegisterDto } from './dto/userRegister.dto';
-import { User } from './user.entity';
-
 export interface IUserService {
-  createUser: (dto: UserRegisterDto) => Promise<User | null>;
+  createUser: (dto: UserRegisterDto) => Promise<UserModel | null>;
   validateUser: (dto: UserLoginDto) => Promise<boolean>;
 }

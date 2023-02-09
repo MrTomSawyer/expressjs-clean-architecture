@@ -9,11 +9,11 @@ export class User {
   ) {}
 
   get email(): string {
-    return this.email;
+    return this._email;
   }
 
   get name(): string {
-    return this.name;
+    return this._name;
   }
 
   get password(): string {
