@@ -51,4 +51,8 @@ export class App {
 			this.logger.log(`App is online and is listening ${this.port} port`);
 		});
 	}
+
+	public close(): void {
+		this.server.close();
+	}
 }
