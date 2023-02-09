@@ -6,19 +6,19 @@ A brief representation is provided on the illustration below:
 
 ![Schema](https://sun9-33.userapi.com/impg/PPFG-gwdOjVJY-bRMKtwNotg_FvGp7QFw9cDAw/N7ev7_si3rw.jpg?size=1223x802&quality=95&sign=389d7e24053fb0f8474e992b466a656e&type=album)
 
-# Features
+## Features
 - Fits SOLID principles;
 - Easy to scale and maintain;
 - Layer architecture is commonly best oprion for microservices;
 
-# Tech
+## Tech
 - [Express.js](https://github.com/expressjs/express) for a convenient request-response handling;
 - [Inversify.js](https://inversify.io/) for a better dependency injection;
 - [Prisma](https://www.prisma.io/) as the most trending Node.js ORM;
 - [Jest](https://jestjs.io/)/[Supertest](https://github.com/ladjs/supertest) for unit and e2e testing;
 - [SQLite](https://www.sqlite.org) just for fun;
 
-# Startup
+## Startup
 
 1. install dependencies
 ```bash
@@ -41,7 +41,7 @@ npm run build
 npm run start
 ```
 
-# API
+## API
 
 `POST users/register` - registers a user
 
