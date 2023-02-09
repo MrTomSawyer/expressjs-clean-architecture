@@ -11,7 +11,7 @@ A brief representation is provided on the illustration below:
 ## Features
 - Fits SOLID principles;
 - Easy to scale and maintain;
-- Layer architecture is commonly best oprion for microservices;
+- Layer architecture is commonly best option for microservices;
 
 ## Tech
 - [Express.js](https://github.com/expressjs/express) for a convenient request-response handling;
@@ -24,23 +24,23 @@ A brief representation is provided on the illustration below:
 
 1. install dependencies
 ```bash
-npi i
+$ npm i
 ```
 
 2. Init Prisma
 ```bash
-npx prisma genetate
+$ npx prisma genetate
 ```
 
 3. Run in development mode:
 ```bash
-npm run dev
+$ npm run dev
 ```
 
 or for production
 ```bash
-npm run build
-npm run start
+$ npm run build
+$ npm run start
 ```
 
 ## API

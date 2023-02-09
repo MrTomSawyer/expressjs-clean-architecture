@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
-import { verify } from "jsonwebtoken";
-import { HttpError } from "../../errors/HttpError.class";
-import { IMiddleware } from "../middleware.interface";
+import { Request, Response, NextFunction } from 'express';
+import { verify } from 'jsonwebtoken';
+import { HttpError } from '../../errors/HttpError.class';
+import { IMiddleware } from '../middleware.interface';
 
 export class AuthMiddleware implements IMiddleware {
 	constructor(private secret: string) {}

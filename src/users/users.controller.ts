@@ -17,38 +17,42 @@ import { AuthGuard } from '../common/JwtAuth/auth.guard';
 @injectable()
 export class UserController extends BaseController implements IUserController {
 	constructor(
-			@inject(TYPES.ILogger) private loggerService: ILogger,
-			@inject(TYPES.UserService) private userService: IUserService,
-			@inject(TYPES.JwtAuthService) private jwtAuthService: IJwtAuthService,
-			@inject(TYPES.ConfigService) private configService: IConfigService,
-		) {
+		@inject(TYPES.ILogger) private loggerService: ILogger,
+		@inject(TYPES.UserService) private userService: IUserService,
+		@inject(TYPES.JwtAuthService) private jwtAuthService: IJwtAuthService,
+		@inject(TYPES.ConfigService) private configService: IConfigService,
+	) {
 		super(loggerService);
 		this.bindRoutes([
 			{
 				path: '/register',
 				method: 'post',
 				func: this.register,
-				middlewares: [new ValidateMiddleware(UserRegisterDto)]
+				middlewares: [new ValidateMiddleware(UserRegisterDto)],
 			},
 			{
 				path: '/login',
 				method: 'post',
 				func: this.login,
-				middlewares: [new ValidateMiddleware(UserLoginDto)]
+				middlewares: [new ValidateMiddleware(UserLoginDto)],
 			},
 			{
 				path: '/info',
 				method: 'get',
 				func: this.info,
-				middlewares: [new AuthGuard()]
+				middlewares: [new AuthGuard()],
 			},
 		]);
 	}
 
-	async login(req: Request<{}, {}, UserLoginDto>, res: Response, next: NextFunction): Promise<void> {
+	async login(
+		req: Request<{}, {}, UserLoginDto>,
+		res: Response,
+		next: NextFunction,
+	): Promise<void> {
 		const result = await this.userService.validateUser(req.body);
 		if (!result) {
-			return next(new HttpError(401, 'Auth failed', 'login'))
+			return next(new HttpError(401, 'Auth failed', 'login'));
 		}
 		const secret = this.configService.get('JWT_SECRET');
 		const jwt = await this.jwtAuthService.signJWT(req.body, secret);
@@ -58,11 +62,11 @@ export class UserController extends BaseController implements IUserController {
 	async register(
 		{ body }: Request<{}, {}, UserRegisterDto>,
 		res: Response,
-		next: NextFunction
+		next: NextFunction,
 	): Promise<void> {
 		const result = await this.userService.createUser(body);
 		if (!result) {
-			return next(new HttpError(400, 'Such user already exists'))
+			return next(new HttpError(400, 'Such user already exists'));
 		}
 
 		this.ok(res, { email: result.email, id: result.id });
