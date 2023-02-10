@@ -21,7 +21,6 @@ describe('Users e2e', () => {
 		const res = await request(application.app)
 			.post('/users/login')
 			.send({ email: 'a@a.ru', password: 'qwe' });
-      console.log('@@@', res.body)
 		expect(res.body.jwt).not.toBeUndefined();
 	});
 
