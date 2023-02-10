@@ -6,7 +6,7 @@ It's logic is split into several layers: controllers, services, repositories, en
 
 A brief representation is provided on the illustration below:
 
-![Schema](https://sun9-33.userapi.com/impg/PPFG-gwdOjVJY-bRMKtwNotg_FvGp7QFw9cDAw/N7ev7_si3rw.jpg?size=1223x802&quality=95&sign=389d7e24053fb0f8474e992b466a656e&type=album)
+![Schema](https://sun9-58.userapi.com/impg/WswkmEeE8y30wjlVdzzXwEiQsDOU8VMY4OhzaA/PHfQP4uOALY.jpg?size=1890x1208&quality=95&sign=1c043b5ed623c376af1bbc8598fce2cc&type=album)
 
 ## Features
 - Fits SOLID principles;
