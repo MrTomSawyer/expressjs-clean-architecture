@@ -24,7 +24,6 @@ export class App {
 		@inject(TYPES.PrismaService) private prismaService: PrismaService,
 	) {
 		this.app = express();
-		this.port = 8000;
 		this.logger = logger;
 	}
 
@@ -46,8 +45,9 @@ export class App {
 		this.useMiddleware();
 		this.useRoutes();
 		this.useExceptionFilters();
+		this.port = Number(this.configService.get('PORT')) || 8000;
 		await this.prismaService.connect();
-		this.server = this.app.listen(this.port, () => {
+		this.server = this.app.listen(Number(this.port), () => {
 			this.logger.log(`App is online and is listening ${this.port} port`);
 		});
 	}
