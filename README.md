@@ -66,13 +66,5 @@ Request body:
 }
 ```
 
-`GET users/info` - get user info
-
-Request body:
-```json
-{
-  "email": "janedoe@express.com",
-  "password": "qwerty123",
-  "name": "Jane Doe"
-}
+`GET users/info` - gets current user info
 ```
