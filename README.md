@@ -75,4 +75,3 @@ Request body:
 ```
 
 `GET users/info` - gets current user info
-```
