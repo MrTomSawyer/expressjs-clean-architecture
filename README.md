@@ -8,6 +8,14 @@ A brief representation is provided on the illustration below:
 
 ![Schema](https://sun9-58.userapi.com/impg/WswkmEeE8y30wjlVdzzXwEiQsDOU8VMY4OhzaA/PHfQP4uOALY.jpg?size=1890x1208&quality=95&sign=1c043b5ed623c376af1bbc8598fce2cc&type=album)
 
+Dependensy injection is implemented using ```Inversify.js``` - a third-party tool which provides an IoC container. Before the application starts, IoC container registeres all classes marked with ```@injectable``` decorator and binds them to the specified tokens (symbols in our case):
+
+![ioc](https://sun9-79.userapi.com/impg/MCbwfxFGMMgJhsSlBSenZOWNpD_WHsa14tV-LQ/27nFPmGfzR4.jpg?size=791x238&quality=95&sign=49a4fd9f862bf06cab7f194921aef120&type=album)
+
+To inject an already registered dependency use an ```@inject``` decorator:
+
+![inject](https://sun9-78.userapi.com/impg/GvuH04QUgnDw1OaPbgHqH0aOa3AXVKJOa_6LnQ/RZJ1S8dc1l0.jpg?size=745x187&quality=95&sign=aac317f449680965ff3b8ea49f0d3b26&type=album)
+
 ## Features
 - Fits SOLID principles;
 - Easy to scale and maintain;
